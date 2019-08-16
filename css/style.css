@@ -5,7 +5,123 @@ body{
 	background: url("../img/green-bg.jpg");
 	background-attachment: fixed;
     background-size: contain;
+	overflow-x: hidden;
 }
+.logoInfo{
+	color: black;
+	position: relative;
+	padding-left: 15px;
+}
+.logoInfoP{
+	position: relative;
+	bottom: 40px;
+	left: 50px;
+}
+.logoInfoP h3{
+	position: relative;
+	font-size: 1.3rem;
+	font-weight: 800;
+}
+.logoInfoP p{
+	position: relative;
+	bottom: 10px;
+	font-size: 0.85rem;
+}
+.logoInfo2{
+	position: relative;
+	left: 290px;
+}
+#portalClick{
+	position: relative;
+	right: 5px;
+}
+#navbarSupportedContent{
+	background-image: url("../img/PicsArt_08-06-06.30.291.png");
+	background-size: 450px;
+	position: absolute;
+	display: inline-flex;
+	padding-right: 150px;
+	padding-top: 8px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+}
+#navbarSupportedContent2{
+	position: relative;
+	float: right;
+}
+.d-md-block{
+	color: white;
+}
+.spinner2{
+	margin: 0 auto;
+	top: 420px;
+	z-index: 10;
+	position: relative;
+	width: 40px;
+	height: 40px;
+	display: none;
+}
+.spinnerBegin{
+	margin: 0 auto;
+	top: 400px;
+	z-index: 10;
+	position: relative;
+	width: 40px;
+	height: 40px;
+	display: none;
+}
+.cube1, .cube2 {
+  background-color: #008f11;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+.cube2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+@-webkit-keyframes sk-cubemove {
+  25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
+  50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
+  75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
+  100% { -webkit-transform: rotate(-360deg) }
+}
+@keyframes sk-cubemove {
+  25% {
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  } 50% {
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  } 50.1% {
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  } 75% {
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  } 100% {
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
+}
+.input{
+	border: 1.5px solid rgba(189, 195, 199, 0.7);
+	border-radius: 3px;
+	font-weight: 600;
+	font-size: 15px !important;
+	padding: 10px !important;
+	margin-bottom: 5px;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+
+
 .card-body {
     flex: 1 1 auto;
     padding: 1.25rem;
@@ -19,7 +135,7 @@ body{
 }
  body .p-t-20 {
     padding-top: 20px;
-	 
+
 }
 .row {
     display: flex;

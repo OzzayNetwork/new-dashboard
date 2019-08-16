@@ -18,12 +18,24 @@
 <body>
 <header class="topbar">
   <nav class="navbar top-navbar navbar-expand-md navbar-expand bg-green text-white">
-    <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin1">
-      <ul class="navbar-nav float-left mr-auto">
-        <li class="nav-item  d-md-block"><img src="img/county.png" height="40px";></li>
-        <li class="nav-item dropdown mega-dropdown"><a class="nav-link waves-effect waves-dark" href="#section-1" ria-haspopup="true" aria-expanded="false"> <span class=" d-md-block">Revenue Analysis </span> <span class="d-block d-md-none"><i class="mdi mdi-dialpad font-24"></i></span> </a> </li>
-        <li class="nav-item dropdown"> <a class="nav-link" href="#section-2" id="navbarDropdown" role="button" aria-expanded="false"> <span class="d-md-block">Revenue Breakdown</span> </a> </li>
-      </ul>
+    <div class="navbar-collapse collapse" data-navbarbg="skin1">
+      <div id="navbarSupportedContent">
+        <div class="logoInfo">
+          <li class="nav-item  d-md-block"><img src="img/county.png" height="40px";></li>
+          <div class="logoInfoP">
+            <h3>Nairobi City County</h3>
+            <p>Revenue Collections Dashboard</p>
+          </div>
+        </div>
+      </div>
+      <div class="logoInfo2">
+        <ul class="navbar-nav float-left mr-auto">
+          <li class="nav-item dropdown mega-dropdown"><a class="nav-link waves-effect waves-dark" href="#section-1" ria-haspopup="true" aria-expanded="false"> <span class=" d-md-block">Revenue Analysis </span> <span class="d-block d-md-none"><i class="mdi mdi-dialpad font-24"></i></span> </a> </li>
+          <li class="nav-item dropdown"> <a class="nav-link" href="#section-2" id="navbarDropdown" role="button" aria-expanded="false"> <span class="d-md-block">Revenue Breakdown</span> </a> </li>
+        </ul>
+      </div>
+    </div>
+    <div id="navbarSupportedContent2">
       <ul class="navbar-nav float-right">
         <li class="nav-item dropdown text-white"> <a class="nav-link text-muted waves-effect waves-dark pro-pic" href=""  aria-haspopup="true" aria-expanded="false"><img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle d-none text-white" width="31">Log Out</a> </li>
       </ul>
@@ -31,23 +43,35 @@
   </nav>
 </header>
 <div class="container-fluid">
-  <section class="row " id="section-1"> 
+  <section class="row " id="section-1">
     <!-- column -->
     <div class="col-sm-12">
+      <div class="spinnerBegin">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+      </div>
       <div class="card mt-5">
-        <div class="card-body"> 
+        <div class="card-body">
           <!-- Sales Summery -->
           <div class="p-t-20">
-            <div class="d-md-flex align-items-center mb-3 border-bottom">
+            <div class="d-md-flex align-items-center mb-3 border-bottom" id="sec1">
               <div>
                 <h4 class="card-title">Revenue Analysis and summary</h4>
                 <h5 class="card-subtitle text-capitalize">overview of revenue collection within the county</h5>
               </div>
+              <div id="portalClick" class="ml-auto d-flex align-items-center mb-10px">
+                <div class="dl">
+                  <select class="custom-select" id="rev-select">
+                    <option value="0" selected="" class="portal-clicked">All Revenue Streams</option>
+                    <option value="2" class="weekly-clicked">Parking</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div class="row"> 
+            <div class="row" id="sec2">
               <!-- column -->
               <div class="col-lg-4 mt-5">
-				  
+
                 <div class="col-12 p-0 m-0">
                   <div class="d-flex align-items-center">
                     <div class="mr-2"><span class="text-orange display-5 annuals-icons bg-green"><img src="img/daily-white.png" height="30px";/></span></div>
@@ -57,7 +81,7 @@
                     </div>
                   </div>
                 </div>
-				  
+
 				  <div class="col-12 p-0 m-0">
                   <div class="d-flex align-items-center">
                     <div class="mr-2"><span class="text-orange display-5 annuals-icons bg-green2"><img src="img/yesterday-icon.png" height="30px"; width="30px";/></span></div>
@@ -67,7 +91,7 @@
                     </div>
                   </div>
                 </div>
-				  
+
 				  <div class="col-12 p-0 m-0">
                   <div class="d-flex align-items-center">
                     <div class="mr-2"><span class="text-orange display-5 annuals-icons bg-blue"><img src="img/weekly-white.png" height="30px";/></span></div>
@@ -77,7 +101,7 @@
                     </div>
                   </div>
                 </div>
-				  
+
 				  <div class="col-12 p-0 m-0">
                   <div class="d-flex align-items-center">
                     <div class="mr-2"><span class="text-orange display-5 annuals-icons bg-red"><img src="img/monthmonth-white.png" height="30px";/></span></div>
@@ -86,11 +110,11 @@
                 <h6 class="font-light text-muted">Revenue collected this month</h6>
                     </div>
                   </div>
-                </div>	  
-				 
+                </div>
+
               </div>
               <!-- column -->
-              <div class="col-md-12 col-lg-8">
+              <div class="col-md-12 col-lg-8" id="opacitySection">
                 <hr class="d-lg-none mt-3">
                 <div class="d-md-flex align-items-center border-bottom mb-3">
                   <div>
@@ -99,7 +123,7 @@
                   </div>
                   <div class="ml-auto d-flex align-items-center mb-10px">
                     <div class="dl">
-                      <select class="custom-select">
+                      <select class="custom-select" id="durationClick">
                         <option value="0" selected="" class="monthly-clicked">Monthly</option>
                         <option value="2" class="weekly-clicked">Weekly</option>
                       </select>
@@ -117,8 +141,8 @@
             </div>
           </div>
         </div>
-        <div class="card-body border-top anual-rev-sum">
-          <div class="row mb-0"> 
+        <div id="sec3" class="card-body border-top anual-rev-sum">
+          <div class="row mb-0">
             <!-- col -->
             <div class="col-lg-4 col-md-12 col-sm-12 mt-2">
               <div class="d-flex align-items-center">
@@ -129,7 +153,7 @@
               </div>
               <hr class="d-block d-sm-block d-lg-none ">
             </div>
-            <!-- col --> 
+            <!-- col -->
             <!-- col -->
             <div class="col-lg-4 col-md-12 col-sm-12 mt-2">
               <div class="d-flex align-items-center">
@@ -140,7 +164,7 @@
               </div>
               <hr class="d-block d-sm-block d-lg-none">
             </div>
-            <!-- col --> 
+            <!-- col -->
             <!-- col -->
             <div class="col-lg-4 col-md-12 col-sm-12 mt-2">
               <div class="d-flex align-items-center">
@@ -155,21 +179,25 @@
               </div>
               <hr class="d-block d-sm-block d-lg-none">
             </div>
-            
-            <!-- col --> 
+
+            <!-- col -->
           </div>
         </div>
       </div>
     </div>
   </section>
-  
+
   <!--		revenue breakdowns-->
-  <section class="row " id="section-2"> 
+  <section class="row " id="section-2">
+    <div class="spinner2">
+      <div class="cube1"></div>
+      <div class="cube2"></div>
+    </div>
     <!-- column examp;e 1 -->
     <div class="col-sm-12 col-lg-12">
       <div class="card my-3">
         <div class="card-body my-3">
-          <div class="d-md-flex align-items-center border-bottom mb-3">
+          <div class="d-md-flex align-items-center border-bottom mb-3" id="opacitySection2-1">
             <div>
               <h4 class="card-title">Revenue breakdowns</h4>
               <h5 class="card-subtitle">Revenue breakdown and analysis by time</h5>
@@ -180,7 +208,7 @@
               </div>
             </div>
           </div>
-          <div class="row m-t-40 m-b-0">
+          <div class="row m-t-40 m-b-0" class="opacitySection2" id="opacitySection2-2">
             <div class="col-sm-12 col-lg-4">
               <div class="card  card-hover mt-3">
                 <div class="card-body bg-green text-white">
@@ -205,7 +233,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card my-3">
+              <div class="card my-3"  id="opacitySection2-3">
                 <div class="card-body my-3">
                   <div class="d-md-flex align-items-center border-bottom">
                     <div>
@@ -227,9 +255,10 @@
                 </div>
               </div>
             </div>
-            
+
             <!-- column -->
-            <div class="col-lg-8 col-sm-12">
+
+            <div class="col-lg-8 col-sm-12" id="opacitySection2-4">
               <div class="card my-3">
                 <div class="card-body my-3">
                   <div class="d-md-flex align-items-center border-bottom mb-3">
@@ -264,32 +293,33 @@
                 </div>
               </div>
             </div>
-            <!-- column --> 
+            <!-- column -->
           </div>
         </div>
       </div>
     </div>
-    <!-- column --> 
-    
+    <!-- column -->
+
   </section>
-  <!--		revenue breakdowns--> 
+  <!--		revenue breakdowns-->
 </div>
-<!--	scripts--> 
-<script src="scripts/jquery.min.js"></script> 
-<script src="dist/chartist.js"></script> 
-<script src="dist/chartist-plugin-tooltip.min.js"></script> 
-<script src="scripts/main.js"></script> 
-<script src="https://unpkg.com/feather-icons"></script> 
-<script src="scripts/all.min.js"></script> 
-<script src="scripts/gaige.min.js"></script> 
-<script src="scripts/jquery.malihu.PageScroll2id.js"></script> 
+<!--	scripts-->
+<script src="scripts/jquery.min.js"></script>
+<script src="dist/chartist.js"></script>
+<script src="dist/chartist-plugin-tooltip.min.js"></script>
+<script src="scripts/main.js"></script>
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="scripts/all.min.js"></script>
+<script src="scripts/gaige.min.js"></script>
+<script src="scripts/select.js" charset="utf-8"></script>
+<script src="scripts/jquery.malihu.PageScroll2id.js"></script>
 
-<!--	date scripts--> 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script> 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script> 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script> 
+<!--	date scripts-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
-<!--	date scripts--> 
+<!--	date scripts-->
 <script>
 	feather.replace()
 		// Initialize the barchart in the container with the ID chart1
@@ -298,18 +328,18 @@
     series: [[{meta: 'Jan:', value: 2}, 40, 3, 70, 5, 10, 3, 5, 4, 3, 7, 10],
             [2, 6, 5, 3, 4, 9, 6, 7, 3, 8, 10, 6]]
   },
-	{  
+	{
   fullWidth: true,
   plugins: [ Chartist.plugins.tooltip()],
   axisX: {
 		showGrid: false
 	  }
   });
-	
-	
-	
+
+
+
 //	revenue breakdown by type pie chart
-	
+
 	var chart = new Chartist.Pie('#by-type', {
   series: [{meta: 'Parking:', value: 10}, 20, 50, 20, 5, 50, 15],
   labels: [{meta: 'Parking:', value: 10}, 'UBP','Rents', 'Markets', 'Health', 'Liqore', 'Advertisments']
@@ -367,12 +397,12 @@ chart.on('created', function() {
   }
   window.__anim21278907124 = setTimeout(chart.update.bind(chart), 1000000);
 });
-	
+
 	//	revenue breakdown by bank accounts
-	
+
 	var chart = new Chartist.Pie('#bank', {
   series: [ {meta: 'Co-Op', value: 1404765},{meta: 'NBK', value: 595235}],
- 
+
 }, {
   donut: true,
   donutWidth: 60,
@@ -428,11 +458,11 @@ chart.on('created', function() {
   }
   window.__anim21278907124 = setTimeout(chart.update.bind(chart), 1000000);
 });
-	
-	
-	
+
+
+
 //	breakdown by category 2
-	
+
 	new Chartist.Bar('#by-type2', {
   labels: ['Parking', 'Land Rates', 'Miscelenious', 'Advertisments', 'Trade', 'WATER AND SEWERAGE', 'Decentralization', 'Decentralization', 'Decentralization', 'Decentralization', 'Decentralization', 'Decentralization'],
   series: [2056, 60889, 12064, 20064, 180564, 20499, 10556,152895,3213,233,20899]
@@ -444,15 +474,15 @@ chart.on('created', function() {
   axisX: {
 		showGrid: false
 	  }
-  
+
 });
-	
-	
+
+
 //	this section covers the gauge graph
-	
-	// ============================================================== 
+
+	// ==============================================================
     // Foo1
-    // ============================================================== 
+    // ==============================================================
     var opts = {
         angle: 0, // The span of the gauge arc
         lineWidth: 0.32, // The line thickness
@@ -475,12 +505,12 @@ chart.on('created', function() {
     gauge.maxValue = 800000000000; // set max gauge value
     gauge.setMinValue(0); // Prefer setter over gauge.minValue = 0
     gauge.animationSpeed = 45; // set animation speed (32 is default value)
-    gauge.set(150000000000); // set actual value 
-	
-	
-	
-	
-	
+    gauge.set(150000000000); // set actual value
+
+
+
+
+
 //	date picker
 	$(function() {
   $('input[name="datetimes"]').daterangepicker({
@@ -492,8 +522,8 @@ chart.on('created', function() {
     }
   });
 });
-	
-	
+
+
 	$(function() {
 
     var start = moment().subtract(29, 'days');
@@ -502,7 +532,7 @@ chart.on('created', function() {
     function cb(start, end) {
         $('input[name="datetimes"]').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
 		 $('.selected-date').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-		
+
     }
 
     $('input[name="datetimes"]').daterangepicker({
@@ -522,10 +552,10 @@ chart.on('created', function() {
 
 });
 //	date picker
-	
-	
-	 
-	</script> 
+
+
+
+	</script>
 <!--	scripts-->
 </body>
 </html>

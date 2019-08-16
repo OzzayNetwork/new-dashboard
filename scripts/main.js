@@ -4,6 +4,18 @@ $(function() {
 	$(".custom-select").on('change',function(){
 		var textval=$(this).children("option:selected").val();
 		console.log(textval);
+    $('#opacitySection').css({
+      opacity: 0.1
+    });
+    $('.spinnerBegin').show();
+    setTimeout(function(){
+      $('#opacitySection').css({
+        opacity: 1
+      });
+      $('.spinnerBegin').hide();
+    }, 1400);
+
+
 		if(textval==2){
 			$('.per-title').text("Week on Week Revenue comparison");
 			$('.per-sub').text("Weekly revenue comparison for this week and last week");
@@ -16,11 +28,12 @@ $(function() {
 			$('#this-color').text("This Year");
 			$('#prev-color').text("Last Year");
 		}
+
 	});
-	
-	
+
+
 //	scrolling
-	
+
 	$(window).load(function(){
 
     $("#nav-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
@@ -34,7 +47,7 @@ $(function() {
     });
 
   });
-	
+
 	$("Selector").mPageScroll2id({
 
   /* scroll animation speed in milliseconds: Integer */
@@ -52,9 +65,9 @@ $(function() {
   /* end of page "smooth scrolling" (auto-adjust the scroll-to position when bottom elements are too short): Boolean */
   pageEndSmoothScroll:true,
 
-  /* 
-  page layout defines scrolling direction: String 
-  values: "vertical", "horizontal", "auto" 
+  /*
+  page layout defines scrolling direction: String
+  values: "vertical", "horizontal", "auto"
   */
   layout:"vertical",
 
@@ -99,12 +112,12 @@ $(function() {
 
   /* set specific live selector(s): String */
   liveSelector:false,
-  
+
   /* user callback functions: fn */
   onStart:function(){},
   onComplete:function(){}
 
 });
-	
-	
+
+
 });
