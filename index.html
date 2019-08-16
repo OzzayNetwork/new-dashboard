@@ -1,0 +1,531 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Govorner's Dashboard</title>
+<!--	styles-->
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,600,600i,700,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/fontawesome.min.css">
+<link rel="stylesheet" href="css/all.min.css">
+<link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="dist/chartist.min.css">
+<link rel="stylesheet" href="dist/chartist-plugin-tooltip.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<!--	styles-->
+</head>
+
+<body>
+<header class="topbar">
+  <nav class="navbar top-navbar navbar-expand-md navbar-expand bg-green text-white">
+    <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin1">
+      <ul class="navbar-nav float-left mr-auto">
+        <li class="nav-item  d-md-block"><img src="img/county.png" height="40px";></li>
+        <li class="nav-item dropdown mega-dropdown"><a class="nav-link waves-effect waves-dark" href="#section-1" ria-haspopup="true" aria-expanded="false"> <span class=" d-md-block">Revenue Analysis </span> <span class="d-block d-md-none"><i class="mdi mdi-dialpad font-24"></i></span> </a> </li>
+        <li class="nav-item dropdown"> <a class="nav-link" href="#section-2" id="navbarDropdown" role="button" aria-expanded="false"> <span class="d-md-block">Revenue Breakdown</span> </a> </li>
+      </ul>
+      <ul class="navbar-nav float-right">
+        <li class="nav-item dropdown text-white"> <a class="nav-link text-muted waves-effect waves-dark pro-pic" href=""  aria-haspopup="true" aria-expanded="false"><img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle d-none text-white" width="31">Log Out</a> </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="container-fluid">
+  <section class="row " id="section-1"> 
+    <!-- column -->
+    <div class="col-sm-12">
+      <div class="card mt-5">
+        <div class="card-body"> 
+          <!-- Sales Summery -->
+          <div class="p-t-20">
+            <div class="d-md-flex align-items-center mb-3 border-bottom">
+              <div>
+                <h4 class="card-title">Revenue Analysis and summary</h4>
+                <h5 class="card-subtitle text-capitalize">overview of revenue collection within the county</h5>
+              </div>
+            </div>
+            <div class="row"> 
+              <!-- column -->
+              <div class="col-lg-4 mt-5">
+				  
+                <div class="col-12 p-0 m-0">
+                  <div class="d-flex align-items-center">
+                    <div class="mr-2"><span class="text-orange display-5 annuals-icons bg-green"><img src="img/daily-white.png" height="30px";/></span></div>
+                    <div>
+                      <h3 class="mt-4 mb-0">205,256,250</h3>
+                      <h6 class="font-light text-muted">Revenue collected today</h6>
+                    </div>
+                  </div>
+                </div>
+				  
+				  <div class="col-12 p-0 m-0">
+                  <div class="d-flex align-items-center">
+                    <div class="mr-2"><span class="text-orange display-5 annuals-icons bg-green2"><img src="img/yesterday-icon.png" height="30px"; width="30px";/></span></div>
+                    <div>
+                      <h3 class="mt-4 mb-0">45,235,850</h3>
+                <h6 class="font-light text-muted">Revenue collected yesterday</h6>
+                    </div>
+                  </div>
+                </div>
+				  
+				  <div class="col-12 p-0 m-0">
+                  <div class="d-flex align-items-center">
+                    <div class="mr-2"><span class="text-orange display-5 annuals-icons bg-blue"><img src="img/weekly-white.png" height="30px";/></span></div>
+                    <div>
+                       <h3 class="mt-4 mb-0">205,256,250,225</h3>
+                <h6 class="font-light text-muted">Revenue collected this week</h6>
+                    </div>
+                  </div>
+                </div>
+				  
+				  <div class="col-12 p-0 m-0">
+                  <div class="d-flex align-items-center">
+                    <div class="mr-2"><span class="text-orange display-5 annuals-icons bg-red"><img src="img/monthmonth-white.png" height="30px";/></span></div>
+                    <div>
+                       <h3 class="mt-4 mb-0">455,235,850,125</h3>
+                <h6 class="font-light text-muted">Revenue collected this month</h6>
+                    </div>
+                  </div>
+                </div>	  
+				 
+              </div>
+              <!-- column -->
+              <div class="col-md-12 col-lg-8">
+                <hr class="d-lg-none mt-3">
+                <div class="d-md-flex align-items-center border-bottom mb-3">
+                  <div>
+                    <h4 class="card-title per-title">Month on Month Revenue comparison</h4>
+                    <h5 class="card-subtitle per-sub">Monthly revenue comparison for this year and last year</h5>
+                  </div>
+                  <div class="ml-auto d-flex align-items-center mb-10px">
+                    <div class="dl">
+                      <select class="custom-select">
+                        <option value="0" selected="" class="monthly-clicked">Monthly</option>
+                        <option value="2" class="weekly-clicked">Weekly</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="chart1 ct-chart" id="chart1" style="position: relative; height:320px;"> </div>
+                <div class="key-container mt-3">
+                  <ul class="list-inline text-left">
+                    <li class="list-inline-item "><i class="fa fa-circle coop-color this-color mr-2"></i><span id="this-color">This Year</span></li>
+                    <li class="list-inline-item "><i class="fa fa-circle prev-color mr-2"></i><span id="prev-color">Last Year</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body border-top anual-rev-sum">
+          <div class="row mb-0"> 
+            <!-- col -->
+            <div class="col-lg-4 col-md-12 col-sm-12 mt-2">
+              <div class="d-flex align-items-center">
+                <div class="mr-2"><span class="text-orange display-5 annuals-icons bg-red"><i class="fa fa-bullseye"></i></span></div>
+                <div><span>Annual Target | 2019</span>
+                  <h3 class="font-medium mb-0">800,000,000,000</h3>
+                </div>
+              </div>
+              <hr class="d-block d-sm-block d-lg-none ">
+            </div>
+            <!-- col --> 
+            <!-- col -->
+            <div class="col-lg-4 col-md-12 col-sm-12 mt-2">
+              <div class="d-flex align-items-center">
+                <div class="mr-2"><span class="annuals-icons bg-blue display-5"><i data-feather="dollar-sign" class=""></i></span></div>
+                <div><span>Year collections to date</span>
+                  <h3 class="font-medium mb-0">358,258,023</h3>
+                </div>
+              </div>
+              <hr class="d-block d-sm-block d-lg-none">
+            </div>
+            <!-- col --> 
+            <!-- col -->
+            <div class="col-lg-4 col-md-12 col-sm-12 mt-2">
+              <div class="d-flex align-items-center">
+                <div class="mr-2"><span class="text-info display-5">
+                  <div class="gaugejs-box text-right">
+                    <canvas id="foo" class="gaugejs ml-auto" height="148" width="297" style="width: 70px; height: 34px;">guage</canvas>
+                  </div>
+                  </span></div>
+                <div><span>Target Margin</span>
+                  <h3 class="font-medium mb-0 text-nowrap">258,125,125 (20%)</h3>
+                </div>
+              </div>
+              <hr class="d-block d-sm-block d-lg-none">
+            </div>
+            
+            <!-- col --> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--		revenue breakdowns-->
+  <section class="row " id="section-2"> 
+    <!-- column examp;e 1 -->
+    <div class="col-sm-12 col-lg-12">
+      <div class="card my-3">
+        <div class="card-body my-3">
+          <div class="d-md-flex align-items-center border-bottom mb-3">
+            <div>
+              <h4 class="card-title">Revenue breakdowns</h4>
+              <h5 class="card-subtitle">Revenue breakdown and analysis by time</h5>
+            </div>
+            <div class="ml-auto d-flex align-items-center">
+              <div class="dl">
+                <input type="text" name="datetimes" class="input" />
+              </div>
+            </div>
+          </div>
+          <div class="row m-t-40 m-b-0">
+            <div class="col-sm-12 col-lg-4">
+              <div class="card  card-hover mt-3">
+                <div class="card-body bg-green text-white">
+                  <h4 class="card-title">Revenue collections</h4>
+                  <div class="d-flex no-block align-items-center mt-4">
+                    <div class="">
+                      <h3 class="font-medium mb-0">KSH 54,584,520</h3>
+                      <span class="selected-date">Today: 15 Aug 2019</span></div>
+                    <div class="ml-auto d-none">
+                      <div style="max-width:150px; height:60px;" class="mb-5">
+                        <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                          <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                            <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                          </div>
+                          <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                            <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                          </div>
+                        </div>
+                        <canvas id="bouncerate" width="187" height="93" class="chartjs-render-monitor" style="display: block; height: 75px; width: 150px;"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card my-3">
+                <div class="card-body my-3">
+                  <div class="d-md-flex align-items-center border-bottom">
+                    <div>
+                      <h4 class="card-title">Revenue Distribution</h4>
+                      <h5 class="card-subtitle">Revenue distribution into the different bank accounts</h5>
+                    </div>
+                  </div>
+                  <div class="key-container mt-3">
+                    <ul class="list-inline text-center">
+                      <li class="list-inline-item "><i class="fa fa-circle coop-color mr-2"></i>Cooperative Bank</li>
+                      <li class="list-inline-item "><i class="fa fa-circle nbk-color mr-2"></i>National Bank</li>
+                    </ul>
+                  </div>
+                  <div class="row m-t-40 m-b-0">
+                    <div class="col-12">
+                      <div  id="bank" style="height: 200px; width: 100%; max-height: 260px; position: relative;" class="m-t-20 c3"> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- column -->
+            <div class="col-lg-8 col-sm-12">
+              <div class="card my-3">
+                <div class="card-body my-3">
+                  <div class="d-md-flex align-items-center border-bottom mb-3">
+                    <div>
+                      <h4 class="card-title">Revenue by type</h4>
+                      <h5 class="card-subtitle">Overveiw of revenue collection by revenue stream</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12 col-lg-12">
+                      <div id="by-type2" style="height: 395px; width: 100%; max-height: 395px; position: relative;" class="m-t-20 c3"> </div>
+                    </div>
+                    <!-- column -->
+                    <div class="col-sm-12 col-lg-6 d-none"> <span class="display-6 d-block text-info font-medium">45%</span> <span class="text-muted mb-3">Revenue Breakdown By Type</span>
+                      <ul class="list-style-none revenue-streams">
+                        <li class="mt-2"><i data-feather="disc"></i> Land Rates <span class="float-right">230,258,630</span></li>
+                        <li class="mt-2"><i data-feather="disc"></i> Parking <span class="float-right">90,125,250</span></li>
+                        <li class="mt-2"><i data-feather="disc"></i> SBP <span class="float-right">9,125,250</span></li>
+                        <li class="mt-2"><i data-feather="disc"></i> Advertisments <span class="float-right">9,025,250</span></li>
+                        <li class="mt-2"><i data-feather="disc"></i> Advertisments <span class="float-right">9,025,250</span></li>
+                        <li class="mt-2"><i data-feather="disc"></i> Advertisments <span class="float-right">9,025,250</span></li>
+                        <li class="mt-2"><i data-feather="disc"></i> Advertisments <span class="float-right">9,025,250</span></li>
+                        <li class="mt-2"><i data-feather="disc"></i> Advertisments <span class="float-right">9,025,250</span></li>
+                        <li class="mt-2"><i data-feather="disc"></i> Advertisments <span class="float-right">9,025,250</span></li>
+                        <li class="mt-2"><i data-feather="disc"></i> Advertisments <span class="float-right">9,025,250</span></li>
+                        <li class="mt-2"><i data-feather="disc"></i> Advertisments <span class="float-right">9,025,250</span></li>
+                        <li class="mt-2"><i data-feather="disc"></i> Advertisments <span class="float-right">9,025,250</span></li>
+                        <li class="mt-2"><i data-feather="disc"></i> Advertisments <span class="float-right">9,025,250</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- column --> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- column --> 
+    
+  </section>
+  <!--		revenue breakdowns--> 
+</div>
+<!--	scripts--> 
+<script src="scripts/jquery.min.js"></script> 
+<script src="dist/chartist.js"></script> 
+<script src="dist/chartist-plugin-tooltip.min.js"></script> 
+<script src="scripts/main.js"></script> 
+<script src="https://unpkg.com/feather-icons"></script> 
+<script src="scripts/all.min.js"></script> 
+<script src="scripts/gaige.min.js"></script> 
+<script src="scripts/jquery.malihu.PageScroll2id.js"></script> 
+
+<!--	date scripts--> 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script> 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script> 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script> 
+
+<!--	date scripts--> 
+<script>
+	feather.replace()
+		// Initialize the barchart in the container with the ID chart1
+  new Chartist.Bar('#chart1', {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    series: [[{meta: 'Jan:', value: 2}, 40, 3, 70, 5, 10, 3, 5, 4, 3, 7, 10],
+            [2, 6, 5, 3, 4, 9, 6, 7, 3, 8, 10, 6]]
+  },
+	{  
+  fullWidth: true,
+  plugins: [ Chartist.plugins.tooltip()],
+  axisX: {
+		showGrid: false
+	  }
+  });
+	
+	
+	
+//	revenue breakdown by type pie chart
+	
+	var chart = new Chartist.Pie('#by-type', {
+  series: [{meta: 'Parking:', value: 10}, 20, 50, 20, 5, 50, 15],
+  labels: [{meta: 'Parking:', value: 10}, 'UBP','Rents', 'Markets', 'Health', 'Liqore', 'Advertisments']
+}, {
+  donut: true,
+  showLabel: false,
+	fullWidth: true,
+  plugins: [ Chartist.plugins.tooltip()]
+});
+
+chart.on('draw', function(data) {
+  if(data.type === 'slice') {
+    // Get the total path length in order to use for dash array animation
+    var pathLength = data.element._node.getTotalLength();
+
+    // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+    data.element.attr({
+      'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+    });
+
+    // Create animation definition while also assigning an ID to the animation for later sync usage
+    var animationDefinition = {
+      'stroke-dashoffset': {
+        id: 'anim' + data.index,
+        dur: 1000,
+        from: -pathLength + 'px',
+        to:  '0px',
+        easing: Chartist.Svg.Easing.easeOutQuint,
+        // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+        fill: 'freeze'
+      }
+    };
+
+    // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+    if(data.index !== 0) {
+      animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+    }
+
+    // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+    data.element.attr({
+      'stroke-dashoffset': -pathLength + 'px'
+    });
+
+    // We can't use guided mode as the animations need to rely on setting begin manually
+    // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+    data.element.animate(animationDefinition, false);
+  }
+});
+
+// For the sake of the example we update the chart every time it's created with a delay of 8 seconds
+chart.on('created', function() {
+  if(window.__anim21278907124) {
+    clearTimeout(window.__anim21278907124);
+    window.__anim21278907124 = null;
+  }
+  window.__anim21278907124 = setTimeout(chart.update.bind(chart), 1000000);
+});
+	
+	//	revenue breakdown by bank accounts
+	
+	var chart = new Chartist.Pie('#bank', {
+  series: [ {meta: 'Co-Op', value: 1404765},{meta: 'NBK', value: 595235}],
+ 
+}, {
+  donut: true,
+  donutWidth: 60,
+
+	fullWidth: true,
+  plugins: [ Chartist.plugins.tooltip()]
+});
+
+chart.on('draw', function(data) {
+  if(data.type === 'slice') {
+    // Get the total path length in order to use for dash array animation
+    var pathLength = data.element._node.getTotalLength();
+
+    // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+    data.element.attr({
+      'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+    });
+
+    // Create animation definition while also assigning an ID to the animation for later sync usage
+    var animationDefinition = {
+      'stroke-dashoffset': {
+        id: 'anim' + data.index,
+        dur: 1000,
+        from: -pathLength + 'px',
+        to:  '0px',
+        easing: Chartist.Svg.Easing.easeOutQuint,
+        // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+        fill: 'freeze'
+      }
+    };
+
+    // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+    if(data.index !== 0) {
+      animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
+    }
+
+    // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+    data.element.attr({
+      'stroke-dashoffset': -pathLength + 'px'
+    });
+
+    // We can't use guided mode as the animations need to rely on setting begin manually
+    // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+    data.element.animate(animationDefinition, false);
+  }
+});
+
+// For the sake of the example we update the chart every time it's created with a delay of 8 seconds
+chart.on('created', function() {
+  if(window.__anim21278907124) {
+    clearTimeout(window.__anim21278907124);
+    window.__anim21278907124 = null;
+  }
+  window.__anim21278907124 = setTimeout(chart.update.bind(chart), 1000000);
+});
+	
+	
+	
+//	breakdown by category 2
+	
+	new Chartist.Bar('#by-type2', {
+  labels: ['Parking', 'Land Rates', 'Miscelenious', 'Advertisments', 'Trade', 'WATER AND SEWERAGE', 'Decentralization', 'Decentralization', 'Decentralization', 'Decentralization', 'Decentralization', 'Decentralization'],
+  series: [2056, 60889, 12064, 20064, 180564, 20499, 10556,152895,3213,233,20899]
+}, {
+  distributeSeries: true,
+   horizontalBars: true,
+		 fullWidth: true,
+  plugins: [ Chartist.plugins.tooltip()],
+  axisX: {
+		showGrid: false
+	  }
+  
+});
+	
+	
+//	this section covers the gauge graph
+	
+	// ============================================================== 
+    // Foo1
+    // ============================================================== 
+    var opts = {
+        angle: 0, // The span of the gauge arc
+        lineWidth: 0.32, // The line thickness
+        radiusScale: 1, // Relative radius
+        pointer: {
+            length: 0.44, // // Relative to gauge radius
+            strokeWidth: 0.04, // The thickness
+            color: '#000000' // Fill color
+        },
+        limitMax: false, // If false, the max value of the gauge will be updated if value surpass max
+        limitMin: false, // If true, the min value of the gauge will be fixed unless you set it manually
+        colorStart: '#00421b', // Colors
+        colorStop: '#2a65ff', // just experiment with them
+        strokeColor: '#E0E0E0', // to see which ones work best for you
+        generateGradient: true,
+        highDpiSupport: true // High resolution support
+    };
+    var target = document.getElementById('foo'); // your canvas element
+    var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+    gauge.maxValue = 800000000000; // set max gauge value
+    gauge.setMinValue(0); // Prefer setter over gauge.minValue = 0
+    gauge.animationSpeed = 45; // set animation speed (32 is default value)
+    gauge.set(150000000000); // set actual value 
+	
+	
+	
+	
+	
+//	date picker
+	$(function() {
+  $('input[name="datetimes"]').daterangepicker({
+    timePicker: true,
+    startDate: moment().startOf('hour'),
+    endDate: moment().startOf('hour').add(32, 'hour'),
+    locale: {
+      format: 'M/DD hh:mm A'
+    }
+  });
+});
+	
+	
+	$(function() {
+
+    var start = moment().subtract(29, 'days');
+    var end = moment();
+
+    function cb(start, end) {
+        $('input[name="datetimes"]').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+		 $('.selected-date').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+		
+    }
+
+    $('input[name="datetimes"]').daterangepicker({
+        startDate: start,
+        endDate: end,
+        ranges: {
+           'Today': [moment(), moment()],
+           'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+           'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+           'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+           'This Month': [moment().startOf('month'), moment().endOf('month')],
+           'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        }
+    }, cb);
+
+    cb(start, end);
+
+});
+//	date picker
+	
+	
+	 
+	</script> 
+<!--	scripts-->
+</body>
+</html>
